@@ -7,3 +7,7 @@ branding:
 runs:
   using: docker
   image: Dockerfile
+inputs:
+  args:
+    description: "Arguments to pass to perlcritic"
+    required: false
