@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ux
+
 if [[ "$*" == "" ]]; then
 	echo "Please specify paths in your repo to run Perl Critic on"
 	exit 1
@@ -19,6 +21,7 @@ echo "Created check $CHECKID"
 echo "Testing Perl code"
 violations=$(perlcritic --nocolor --quiet --verbose "%f[>]%l[>]%c[>]%s[>]%m[>]%e[>]%d[[END]]" $*)
 success=$?
+echo $violations
 
 CHECK_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/check-runs/$CHECKID"
 
