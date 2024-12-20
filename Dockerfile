@@ -1,4 +1,4 @@
-FROM pipelinecomponents/perl-critic:0.12.4
+FROM pipelinecomponents/perl-critic:latest
 
 RUN apk add bash curl ca-certificates coreutils jq 
 
